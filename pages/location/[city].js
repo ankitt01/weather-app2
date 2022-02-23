@@ -2,6 +2,8 @@ import React from 'react'
 import cities from '../../lib/city.list.json'
 import Head from 'next/head';
 import TodaysWeather from '../../components/TodaysWeather';
+import HourlyWeather from '../../components/HourlyWeather';
+import WeeklyWeather from '../../components/WeeklyWeather';
 import moment from 'moment-timezone'
 
 
@@ -38,7 +40,6 @@ const getCity = param => {
     const cityParam = param.trim();
     const splitCity = cityParam.split("-");
     const id = splitCity[splitCity.length-1];
-    console.log(id)
 
     if(!id)
     return null
@@ -72,6 +73,8 @@ function city({hourlyWeather, currentWeather, weeklyWeather, city, timezone}) {
 
         <div className='page-wrapper'>
             <TodaysWeather city={city} weather={weeklyWeather[0]} timezone={timezone} />
+            <HourlyWeather hourlyWeather={hourlyWeather} timezone={timezone}/>
+            <WeeklyWeather weeklyWeather={weeklyWeather} timezone={timezone}/>
         </div>
 
         
