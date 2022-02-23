@@ -379,138 +379,138 @@ h6 {
   }
 }
 
-// .places {
-//   margin-top: 30px;
+.places {
+  margin-top: 30px;
 
-//   &__row {
-//     display: flex;
-//     flex-wrap: wrap;
-//     margin-left: -15px;
-//     margin-right: -15px;
-//   }
+  &__row {
+    display: flex;
+    flex-wrap: wrap;
+    margin-left: -15px;
+    margin-right: -15px;
+  }
 
-//   &__box {
-//     flex: 0 0 25%;
-//     padding-left: 15px;
-//     padding-right: 15px;
+  &__box {
+    flex: 0 0 25%;
+    padding-left: 15px;
+    padding-right: 15px;
 
-//     a {
-//       display: block;
-//       width: 100%;
-//       position: relative;
-//       text-decoration: none;
+    a {
+      display: block;
+      width: 100%;
+      position: relative;
+      text-decoration: none;
 
-//       &:hover {
-//         span {
-//           opacity: 1;
-//         }
+      &:hover {
+        span {
+          opacity: 1;
+        }
 
-//         img {
-//           opacity: 0.8;
-//         }
-//       }
+        img {
+          opacity: 0.8;
+        }
+      }
 
-//       span {
-//         text-decoration: none;
-//         font-weight: $f-bold;
-//         color: $dark;
-//         font-size: 1.25rem;
-//         opacity: 0.9;
-//         transition: all 0.3s ease;
-//       }
-//     }
-//   }
+      span {
+        text-decoration: none;
+        font-weight: $f-bold;
+        color: $dark;
+        font-size: 1.25rem;
+        opacity: 0.9;
+        transition: all 0.3s ease;
+      }
+    }
+  }
 
-//   &__image-wrapper {
-//     position: relative;
-//     padding-bottom: 125%;
-//     border-radius: 10px;
-//     overflow: hidden;
-//     margin-bottom: 10px;
+  &__image-wrapper {
+    position: relative;
+    padding-bottom: 125%;
+    border-radius: 10px;
+    overflow: hidden;
+    margin-bottom: 10px;
 
-//     img {
-//       transition: all 0.3s ease;
-//     }
-//   }
-// }
+    img {
+      transition: all 0.3s ease;
+    }
+  }
+}
 
-// #nprogress {
-//   pointer-events: none;
-// }
+#nprogress {
+  pointer-events: none;
+}
 
-// #nprogress .bar {
-//   background: $primary;
+#nprogress .bar {
+  background: $primary;
 
-//   position: fixed;
-//   z-index: 1031;
-//   top: 0;
-//   left: 0;
+  position: fixed;
+  z-index: 1031;
+  top: 0;
+  left: 0;
 
-//   width: 100%;
-//   height: 4px;
-// }
+  width: 100%;
+  height: 4px;
+}
 
-// /* Fancy blur effect */
-// #nprogress .peg {
-//   display: block;
-//   position: absolute;
-//   right: 0px;
-//   width: 100px;
-//   height: 100%;
-//   // box-shadow: 0 0 10px $primary, 0 0 5px $primary;
-//   opacity: 1;
+/* Fancy blur effect */
+#nprogress .peg {
+  display: block;
+  position: absolute;
+  right: 0px;
+  width: 100px;
+  height: 100%;
+  // box-shadow: 0 0 10px $primary, 0 0 5px $primary;
+  opacity: 1;
 
-//   -webkit-transform: rotate(3deg) translate(0px, -4px);
-//   -ms-transform: rotate(3deg) translate(0px, -4px);
-//   transform: rotate(3deg) translate(0px, -4px);
-// }
+  -webkit-transform: rotate(3deg) translate(0px, -4px);
+  -ms-transform: rotate(3deg) translate(0px, -4px);
+  transform: rotate(3deg) translate(0px, -4px);
+}
 
-// /* Remove these to get rid of the spinner */
-// #nprogress .spinner {
-//   display: block;
-//   position: fixed;
-//   z-index: 1031;
-//   top: 15px;
-//   right: 15px;
-// }
+/* Remove these to get rid of the spinner */
+#nprogress .spinner {
+  display: block;
+  position: fixed;
+  z-index: 1031;
+  top: 15px;
+  right: 15px;
+}
 
-// #nprogress .spinner-icon {
-//   width: 18px;
-//   height: 18px;
-//   box-sizing: border-box;
+#nprogress .spinner-icon {
+  width: 18px;
+  height: 18px;
+  box-sizing: border-box;
 
-//   border: solid 2px transparent;
-//   border-top-color: $primary;
-//   border-left-color: $primary;
-//   border-radius: 50%;
+  border: solid 2px transparent;
+  border-top-color: $primary;
+  border-left-color: $primary;
+  border-radius: 50%;
 
-//   -webkit-animation: nprogress-spinner 400ms linear infinite;
-//   animation: nprogress-spinner 400ms linear infinite;
-// }
+  -webkit-animation: nprogress-spinner 400ms linear infinite;
+  animation: nprogress-spinner 400ms linear infinite;
+}
 
-// .nprogress-custom-parent {
-//   overflow: hidden;
-//   position: relative;
-// }
+.nprogress-custom-parent {
+  overflow: hidden;
+  position: relative;
+}
 
-// .nprogress-custom-parent #nprogress .spinner,
-// .nprogress-custom-parent #nprogress .bar {
-//   position: absolute;
-// }
+.nprogress-custom-parent #nprogress .spinner,
+.nprogress-custom-parent #nprogress .bar {
+  position: absolute;
+}
 
-// @-webkit-keyframes nprogress-spinner {
-//   0% {
-//     -webkit-transform: rotate(0deg);
-//   }
-//   100% {
-//     -webkit-transform: rotate(360deg);
-//   }
-// }
-// @keyframes nprogress-spinner {
-//   0% {
-//     transform: rotate(0deg);
-//   }
-//   100% {
-//     transform: rotate(360deg);
-//   }
-// }
+@-webkit-keyframes nprogress-spinner {
+  0% {
+    -webkit-transform: rotate(0deg);
+  }
+  100% {
+    -webkit-transform: rotate(360deg);
+  }
+}
+@keyframes nprogress-spinner {
+  0% {
+    transform: rotate(0deg);
+  }
+  100% {
+    transform: rotate(360deg);
+  }
+}
