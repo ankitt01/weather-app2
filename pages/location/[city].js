@@ -1,5 +1,9 @@
 import React from 'react'
 import cities from '../../lib/city.list.json'
+import Head from 'next/head';
+import TodaysWeather from '../../components/TodaysWeather';
+
+
 export async function getServerSideProps(context) {
     const  city = getCity(context.params.city)
     if(!city) {
@@ -65,11 +69,19 @@ const getHourlyWeather = (hourlyData) => {
 
 }
 
-function city({hourlyWeather, currentWeather, dailyWeather, city}) {
-    console.log(currentWeather)
+function city({hourlyWeather, currentWeather, weeklyWeather, city}) {
+    console.log(weeklyWeather[0])
   return (
     <div>
-        city page
+        <Head>
+            <title>{city.name} Weather App</title>
+        </Head>
+
+        <div className='page-wrapper'>
+            <TodaysWeather city={city} weather={weeklyWeather[0]} />
+        </div>
+
+        
     </div>
   )
 }
