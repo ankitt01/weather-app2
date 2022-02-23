@@ -6,6 +6,7 @@ import HourlyWeather from '../../components/HourlyWeather';
 import WeeklyWeather from '../../components/WeeklyWeather';
 import moment from 'moment-timezone'
 import SearchBox from '../../components/SearchBox'
+import Link from 'next/link';
 
 
 export async function getServerSideProps(context) {
@@ -74,6 +75,10 @@ function city({hourlyWeather, currentWeather, weeklyWeather, city, timezone}) {
         </Head>
 
         <div className='page-wrapper'>
+          <Link href="/">
+            <a className='back-link'>&larr; Home</a>
+          </Link>
+
           <SearchBox placeholder="Search another location.."/>
             <TodaysWeather city={city} weather={weeklyWeather[0]} timezone={timezone} />
             <HourlyWeather hourlyWeather={hourlyWeather} timezone={timezone}/>
