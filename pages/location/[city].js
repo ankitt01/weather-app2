@@ -14,14 +14,20 @@ export async function getServerSideProps(context) {
             notFound: true
         }
     }
-    console.log(data)
+    
+    const hourlyWeather = getHourlyWeather(data.hourly, data.timezone);
 
-    const slug = context.params.city;
-    return {
-        props :{
-            slug
-        }
-    }
+  const weeklyWeather = data.daily;
+
+  return {
+    props: {
+      city: city,
+      timezone: data.timezone,
+      currentWeather: data.current,
+      hourlyWeather: hourlyWeather,
+      weeklyWeather: weeklyWeather,
+    }, // will be passed to the page component as props
+  };
 }
 const getCity = param => {
     const cityParam = param.trim();
@@ -39,10 +45,31 @@ const getCity = param => {
         return null
     }
 }
-function city({slug}) {
+
+//sorting and filtering the data
+const getHourlyWeather = (hourlyData) => {
+    const current = new Date();
+    current.setHours(current.getHours(), 0, 0, 0);
+    const tomorrow = new Date(current);
+    tomorrow.setDate(tomorrow.getDate() + 1);
+    tomorrow.setHours(0, 0, 0, 0);
+
+    //divide by 1000 to get timestamps in seconds
+
+    const currentTimeStamp = Math.floor(current.getTime() / 1000);
+  const tomorrowTimeStamp = Math.floor(tomorrow.getTime() / 1000);
+
+  const todaysData = hourlyData.filter((data) => data.dt < tomorrowTimeStamp);
+
+  return todaysData;
+
+}
+
+function city({hourlyWeather, currentWeather, dailyWeather, city}) {
+    console.log(currentWeather)
   return (
     <div>
-        <h1>{slug}</h1>
+        city page
     </div>
   )
 }
